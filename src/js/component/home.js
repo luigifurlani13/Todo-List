@@ -39,7 +39,7 @@ export function Home() {
 	};
 
 	return (
-		<div>
+		<div className="box">
 			<input
 				onKeyDown={newTodo}
 				type="text"
@@ -48,7 +48,9 @@ export function Home() {
 				name="fname"></input>
 			<div>
 				<ul>{todo}</ul>
-				<div className="footer">{todo.length} item left</div>
+				<div>
+					<ul>{todo.length} item left</ul>
+				</div>
 			</div>
 		</div>
 	);

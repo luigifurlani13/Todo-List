@@ -1,13 +1,23 @@
 @import "~bootstrap/scss/bootstrap.scss";
+body {
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/so-white.png);
+}
+.box {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+li {
+    background-color: white;
+    border-top: 0.5px solid grey;
+}
 
-/* 
+ul {
+    list-style: none;
+    margin: auto;
+    padding: 0%;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
 
-*/
