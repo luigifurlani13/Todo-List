@@ -15,10 +15,10 @@ export function Home() {
 
 	let todo = variable.map((item, i) => {
 		return (
-			<li key={i}>
-				{item}
+			<div className="repeating" key={i}>
+				<li>{item}</li>
 				<button onClick={() => removeItem(i)}>X</button>
-			</li>
+			</div>
 		);
 	});
 
@@ -40,11 +40,12 @@ export function Home() {
 
 	return (
 		<div className="box">
+			<h1 className="text-center">todos</h1>
 			<input
 				onKeyDown={newTodo}
 				type="text"
 				id="fname"
-				placeholder="Task"
+				placeholder="What needs to be done?"
 				name="fname"></input>
 			<div>
 				<ul>{todo}</ul>
