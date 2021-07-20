@@ -12,24 +12,34 @@ export function Home() {
 		"Do Laundry",
 		"Walk the Dog"
 	]);
+	const [isShown, setIsShown] = useState({
+		state: false,
+		index: 0
+	});
 
 	let todo = variable.map((item, i) => {
 		return (
 			<div className="repeating" key={i}>
-				<li>{item}</li>
-				<button onClick={() => removeItem(i)}>X</button>
+				<li
+					onMouseEnter={() => setIsShown({ state: true, index: i })}
+					onMouseLeave={() => setIsShown({ state: false, index: 0 })}>
+					{item}{" "}
+					{isShown.state === true && isShown.index === i ? (
+						<button setonClick={() => removeItem(i)}>X</button>
+					) : (
+						""
+					)}
+				</li>
 			</div>
 		);
 	});
 
 	const removeItem = index => {
-		console.log(index);
 		const newArray = variable.filter((item, i) => i != index);
 		setVariable(newArray);
 	};
 
 	const newTodo = onKeyDownEvent => {
-		console.log(onKeyDownEvent);
 		if (onKeyDownEvent.keyCode === 13) {
 			let userInput = onKeyDownEvent.target.value;
 			const newTodo = [...variable, userInput];
