@@ -3,25 +3,38 @@ body {
     background: url(https://www.toptal.com/designers/subtlepatterns/patterns/so-white.png);
 }
 .box {
-    margin-top: 350px;
-    margin-left: 875px;
-    width: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    width: 20%;
     padding: 10;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 
+        0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19),
+        0 1px 1px rgba(0,0,0,0.15),
+        0 10px 0 -5px white,
+        0 10px 1px -4px rgba(0,0,0,0.15),
+        0 20px 0 -10px white,
+        0 20px 1px -9px rgba(0,0,0,0.15);
 }
 
 h1{
+    color:gray;
     padding-bottom: 40px;
     padding-top: 30px;
 }
 
 .repeating{
-    display: flex;
-    margin-left: 70px;
-    padding: 2px;
-    width: 80%;
-    border: 1px black;
-    height: 80px;
+    position: relative;
+    margin: 0 auto;
+    padding: 5px;
+    width: auto;
+    height: auto;
 }
 
 input{
@@ -36,13 +49,35 @@ li {
     padding-left: 30px;
     background-color: white;  
     height: 75px;
+    font-size: 22px;
+    color: gray;
 }
 
 ul {
     list-style: none;
     margin: auto;
     padding: 0%;
+    color: gray;
 }
+
+button {
+    float:right;
+    padding-right: 25px;
+    border: none;
+    background: none;
+    color: gray;
+}
+
+span {
+    float: right;
+}
+
+.counter {
+    background-color: white;
+    color: gray;
+}
+
+
 
 
 

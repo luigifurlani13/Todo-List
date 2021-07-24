@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 //create your first component
 
 export function Home() {
-	const [variable, setVariable] = useState([
+	const [todoList, setTodoList] = useState([
 		"Do Homework",
 		"Do Laundry",
 		"Walk the Dog"
@@ -17,7 +17,7 @@ export function Home() {
 		index: 0
 	});
 
-	let todo = variable.map((item, i) => {
+	const todo = todoList.map((item, i) => {
 		return (
 			<div className="repeating" key={i}>
 				<li
@@ -25,7 +25,7 @@ export function Home() {
 					onMouseLeave={() => setIsShown({ state: false, index: 0 })}>
 					{item}{" "}
 					{isShown.state === true && isShown.index === i ? (
-						<button setonClick={() => removeItem(i)}>X</button>
+						<button onClick={() => removeItem(i)}>X</button>
 					) : (
 						""
 					)}
@@ -35,15 +35,15 @@ export function Home() {
 	});
 
 	const removeItem = index => {
-		const newArray = variable.filter((item, i) => i != index);
-		setVariable(newArray);
+		const newArray = todoList.filter((item, i) => i != index);
+		setTodoList(newArray);
 	};
 
 	const newTodo = onKeyDownEvent => {
 		if (onKeyDownEvent.keyCode === 13) {
 			let userInput = onKeyDownEvent.target.value;
-			const newTodo = [...variable, userInput];
-			setVariable(newTodo);
+			const newTodo = [...todoList, userInput];
+			setTodoList(newTodo);
 			onKeyDownEvent.target.value = "";
 		}
 	};
@@ -60,7 +60,7 @@ export function Home() {
 			<div>
 				<ul>{todo}</ul>
 				<div>
-					<ul>{todo.length} item left</ul>
+					<ul className="counter">{todo.length} item left</ul>
 				</div>
 			</div>
 		</div>
